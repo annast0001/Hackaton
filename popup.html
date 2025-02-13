@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>pix2txt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      width: 500px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+    }
+    .left, .right {
+      flex: 1;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .left {
+      border-right: 1px solid #ccc;
+    }
+    .image-preview {
+      width: 100%;
+      height: 250px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .image-preview img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .recognized-text {
+      width: 100%;
+      height: 250px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="image-preview" id="imagePreview">
+        <span>Немає зображення</span>
+      </div>
+      <div class="buttons">
+        <button id="selectAreaButton">Обрати область</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="recognized-text" id="recognizedText">
+        <!-- Розпізнаний текст з'явиться тут -->
+      </div>
+      <div class="buttons">
+        <button id="copyButton">Копіювати</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
